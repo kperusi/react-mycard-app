@@ -1,0 +1,433 @@
+* {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'Space_Grotesk';
+  src: url('./static/SpaceGrotesk-Regular.ttf');
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-family: 'Space_Grotesk';
+}
+  .main {
+    position: relative;
+    margin: 20px auto;
+    padding-top: 120px;
+    min-width: 100px;
+    width: 100%;
+    background-image: url(./images/bg-main-desktop-copy.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 30vw 900px;
+  }
+  .forms,
+  .confirmation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 25%;
+    height: 400px;
+  }
+  .forms {
+    margin: 0px 50vw;
+  }
+  .confirmation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0px 580px;
+  }
+
+  .holdername,
+  .card-number-input {
+    height: 30px;
+    border-radius: 5px;
+    border-color: grey;
+    padding-left: 5px;
+    border-style: solid;
+    border-width: 1px;
+  }
+
+  .date-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    gap: 5px;
+  }
+
+  .date-labels {
+    display: flex;
+    gap: 0px;
+    padding-top: 10px;
+    justify-content: space-between;
+  }
+
+  .date-container input {
+    border-radius: 5px;
+    border-color: grey;
+    border-style: solid;
+    padding-left: 5px;
+    border-width: 1px;
+  }
+  .card-date-month {
+    width: 5vw;
+    height: 30px;
+  }
+  .card-date-year {
+    width: 5vw;
+  }
+  .cvc {
+    flex-basis: 1;
+    flex-grow: 2;
+    width: 6vw;
+  }
+
+  .form-button,
+  .continue-button {
+    height: 40px;
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    border-radius: 5px;
+    border: none;
+  }
+  .confirmation img {
+    margin-bottom: 10px;
+    align-self: center;
+  }
+  .confirmation h1,
+  .confirmation p {
+   
+    margin: 0;
+  }
+  .continue-button {
+    margin-top: 10px;
+  }
+
+  .card-front {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 10px hsl(0, 6%, 42%);
+    border-radius: 8px;
+    gap: 0;
+    top: 80px;
+    width: 32vw;
+    max-width: 320px;
+    left: 10%;
+    height: calc(30vw - 10vh);
+    max-height: 200px;
+    background-image: url(./images/bg-card-front.png);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .card-shape {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    margin-left: 10px;
+  }
+
+  .big-circle {
+    width: 30px;
+    height: 30px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 47%;
+  }
+
+  .small-circle {
+    width: 11px;
+    height: 11px;
+    border-radius: 47%;
+    border: 1px solid hsl(0, 0%, 100%);
+  }
+
+  .card-number-display {
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+    font-weight: 100;
+    font-size: 160%;
+    margin-top: 62px;
+    margin-bottom: 0;
+  }
+
+  .name-date {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 20px;
+    font-weight: 100;
+    font-size: 10px;
+    color: hsl(0, 0%, 100%);
+  }
+  .card-date {
+    display: flex;
+    flex-direction: row;
+  }
+  .card-date h3 {
+    padding: 1px;
+  }
+
+  .card-back {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    box-shadow: 1px 1px 10px 1px hsl(0, 7%, 87%);
+    border-radius: 8px;
+    width: 32vw;
+    max-width: 320px;
+    top: 310px;
+    left: 15%;
+    height: calc(30vw - 10vh);
+    max-height: 200px;
+    background-image: url(./images/bg-card-back.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .cvc-display {
+    margin: 12px 20vw;
+    color: white;
+    font-size: 1.9em;
+  }
+
+  .error-grp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 25px;
+    margin-top: -40px;
+  }
+  .error-grp p {
+    color: red;
+  }
+
+/* mobile  */
+@media screen and (min-width: 180px)and (max-width: 780px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    background-image: url(./images/bg-main-mobile.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 120%;
+    font-size: 1.7em;
+    width: 100%;
+    margin: 0 auto;
+
+    
+  }
+
+  .forms,
+  .confirmation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90vw;
+    height: 500px;
+   
+    
+  }
+  .forms {
+    margin: 340px auto;
+  }
+  
+  .confirmation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 340px auto;
+  }
+  
+  .holdername,
+  .card-number-input {
+    height: 70px;
+    border-radius: 5px;
+    border-color: grey;
+    padding-left: 5px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 1.2em;
+   
+  }
+  
+  .date-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    gap: 5px;
+  }
+  
+  .date-labels {
+    display: flex;
+    gap: 0px;
+    padding-top: 10px;
+    justify-content: space-between;
+  }
+  
+  .date-container input {
+    border-radius: 5px;
+    border-color: grey;
+    border-style: solid;
+    padding-left: 5px;
+    border-width: 1px;
+    font-size: 1em;
+    height: 50px;
+  }
+  
+  .card-date-month {
+    width: 23vw;
+    height: 50px;
+    /* font-size: 0.8em; */
+  }
+  .card-date-year {
+    width: 23vw;
+    font-size: 0.8em;
+   
+  }
+  .cvc {
+    width: 30vw;
+   
+  }
+  
+  .form-button,
+  .continue-button {
+    height: 60px;
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.4em;
+  }
+ 
+  
+  .confirmation img {
+    margin-bottom: 10px;
+    align-self: center;
+    height: 150px;
+    
+  }
+  .confirmation h1,
+  .confirmation p {
+    margin-top: 0px;
+  }
+  .confirmation p{
+    color: hsl(279, 6%, 55%)
+  }
+  .continue-button {
+    margin-top: 10px;
+  }
+
+  .card-front {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+  -moz-box-shadow: 5px 5px 19px rgba(68, 68, 68, 0.3);
+  /* -webkit-box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6); */
+  box-shadow: 5px 5px 19px rgba(68, 68, 68, 0.3);
+    border-radius: 8px;
+    gap: 0;
+    width: 80vw;
+    top: 175px;
+    left: 30px;
+    height: 240px;
+    background-image: url(./images/bg-card-front.png);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .card-shape {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    margin-left: 10px;
+  }
+
+  .big-circle {
+    width: 30px;
+    height: 30px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 47%;
+  }
+
+  .small-circle {
+    width: 11px;
+    height: 11px;
+    border-radius: 47%;
+    border: 1px solid hsl(0, 0%, 100%);
+  }
+
+  .card-number-display {
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+    font-weight: 100;
+    font-size: 90%;
+    margin-top: 62px;
+    height: 55px;
+   
+  }
+
+  .name-date {
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 20px;
+    
+  }
+  .name-date h3{
+    font-size: 1.9em;
+    color: hsl(270, 3%, 87%);
+    font-weight: 100;
+  }
+  .card-date {
+    display: flex;
+    flex-direction: row;
+    
+  }
+  .card-date h3 {
+    padding: 1px;
+    
+  }
+
+  .card-back {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    box-shadow: 1px 1px 10px 1px hsl(0, 7%, 87%);
+    border-radius: 8px;
+    left: 60px;
+    top: 30px;
+    width: 80vw;
+    height: 250px;
+    background-image: url(./images/bg-card-back.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cvc-display {
+    margin: 80px 55vw;
+    color: white;
+    font-size: 1.1em;
+
+  }
+  
+  .error-grp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 25px;
+    margin-top: -40px;
+  }
+  .error-grp p{
+    color: red;
+    font-size: 0.8em;
+  
+  }
+}
+
