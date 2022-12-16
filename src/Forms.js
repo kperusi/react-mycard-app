@@ -31,9 +31,9 @@ function Forms(props) {
   const onchange = (e) => {
     setCardNumber(formatedNumber(e.target.value));
   };
-  const onMonthChange=(e)=>{
-    setMonthValues(e.target.value)
-  }
+  // const onMonthChange=(e)=>{
+  //   setMonthValues(e.target.value)
+  // }
 
   console.log(monthValues)
 

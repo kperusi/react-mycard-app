@@ -74,9 +74,9 @@ function Main() {
     setCvcValue(e.target.value);
   };
 
-  const displayMonthError = () => {
-    setErrorText("Can't be blank");
-  };
+  // const displayMonthError = () => {
+  //   setErrorText("Can't be blank");
+  // };
 
   return (
     <div className="main">
