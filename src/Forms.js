@@ -1,53 +1,35 @@
 import React, { useState } from "react";
 import './page.css'
+import { formatedNumber } from "./FormatedNumber";
+import { CheckForLetters } from "./CheckforLetters";
 
 function Forms(props) {
   const [cardNumber, setCardNumber] = useState("");
-  // const [monthValues, setMonthValues]=useState('')
+  
 
-  // function to format number
 
-  function formatedNumber(values) {
-    let val = values.replace(/\D/g, "");
-    let val2 = val.match(/(\d{0,4})?(\d{0,4})?(\d{0,4})?(\d{0,4})/);
 
-    let result = "";
-    if (val2[1]) {
-      result = val2[1];
-    }
-
-    if (val2[2]) {
-      result = result.concat(" " + val2[2]);
-    }
-    if (val2[3]) {
-      result = result.concat(" " + val2[3]);
-    }
-    if (val2[4]) {
-      result = result.concat(" " + val2[4]);
-    }
-    return result;
-  }
-
+  
   const onchange = (e) => {
     setCardNumber(formatedNumber(e.target.value));
+    
   };
-  // const onMonthChange=(e)=>{
-  //   setMonthValues(e.target.value)
-  // }
 
-  // console.log(monthValues)
+console.log(CheckForLetters(cardNumber))
 
   return (
     <div className="forms">
-      <label htmlFor="holdername">CARDHOLDER NAME</label>
+      <label htmlFor="holdername" className="label">CARDHOLDER NAME</label>
 
       <input
         className="holdername"
         placeholder="e.g Jane Appleseed"
         onInput={props.nameHandler}
+        type ='text'
+
       ></input>
 
-      <label htmlFor="card-number">CARD NUMBER</label>
+      <label htmlFor="card-number"className="label">CARD NUMBER</label>
 
       <input
         className="card-number-input"
@@ -57,11 +39,14 @@ function Forms(props) {
         value={cardNumber}
         required
         autoComplete="none"
+        type={'text'}
+        maxLength={19}
       ></input>
+      {CheckForLetters(cardNumber)&& <p className="number-error">Wrong format, numbers only</p>}
 
       <div className="date-labels">
-        <label htmlFor="card-date-month">EXP.DATE(MM/YY)</label>
-        <label htmlFor="card-date-year" style={{ marginRight: "30px" }}>
+        <label htmlFor="card-date-month" className="label" >EXP.DATE(MM/YY)</label>
+        <label htmlFor="card-date-year"className="label" style={{ marginRight: "30px" }}>
           CVC
         </label>
       </div>

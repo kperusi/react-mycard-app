@@ -66,12 +66,12 @@ html {
     flex-direction: row;
     margin-bottom: 20px;
     gap: 5px;
+    
   }
 
   .date-labels {
     display: flex;
     gap: 0px;
-    padding-top: 10px;
     justify-content: space-between;
   }
 
@@ -81,6 +81,7 @@ html {
     border-style: solid;
     padding-left: 5px;
     border-width: 1px;
+    
   }
   .card-date-month {
     width: 5vw;
@@ -94,8 +95,14 @@ html {
     flex-grow: 2;
     width: 6vw;
   }
-  .form label{
-    font-size: 1px;
+  .label{
+    font-size: .8em;
+    margin-bottom: -5px;
+  }
+  .number-error{
+    margin-top: -10px;
+    color: red;
+    margin-bottom: 0;
   }
 
   .form-button,

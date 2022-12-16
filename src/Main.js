@@ -37,13 +37,15 @@ function Main() {
 
   const confirmationClickHandler = () => {
     setVisibility(false);
-
     setCvcValue('')
     setMonthValue('')
+    setCvcErrorText('')
+    setErrorText('')
   };
 
   const nameHandler = (e) => {
-    setName(e.target.value);
+  
+    setName((e.target.value).toUpperCase());
   };
 
   const EnterNumberHandler = (e) => {
@@ -74,9 +76,6 @@ function Main() {
     setCvcValue(e.target.value);
   };
 
-  // const displayMonthError = () => {
-  //   setErrorText("Can't be blank");
-  // };
 
   return (
     <div className="main">
