@@ -3,7 +3,7 @@ import './page.css'
 
 function Forms(props) {
   const [cardNumber, setCardNumber] = useState("");
-  const [monthValues, setMonthValues]=useState('')
+  // const [monthValues, setMonthValues]=useState('')
 
   // function to format number
 
@@ -35,7 +35,7 @@ function Forms(props) {
   //   setMonthValues(e.target.value)
   // }
 
-  console.log(monthValues)
+  // console.log(monthValues)
 
   return (
     <div className="forms">
