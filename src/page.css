@@ -27,7 +27,7 @@ html {
     width: 100%;
     margin: 0 auto;
     padding-bottom: 10px;
-    border: 2px solid rgb(104, 18, 244);
+    
   }
 
   .forms,
@@ -88,7 +88,7 @@ html {
   .card-date-month {
     width: 23vw;
     height: 50px;
-    /* font-size: 0.8em; */
+ 
   }
   .card-date-year {
     width: 23vw;
@@ -253,7 +253,7 @@ html {
     width: 100%;
     margin: 0 auto;
     padding-bottom: 10px;
-    border: 2px solid rgb(229, 11, 11);
+    
   }
 
   .forms,
@@ -477,7 +477,7 @@ html {
     width: 100%;
     margin: 0 auto;
     padding-bottom: 10px;
-    border: 2px solid rgb(249, 5, 176);
+    
   }
 
   .forms,
@@ -701,7 +701,7 @@ html {
     background-repeat: no-repeat;
     background-position: left;
     background-size: 30vw 550px;
-    border: 2px solid rgb(96, 208, 55);
+    
   }
 
   .forms,
@@ -930,7 +930,7 @@ html {
     background-repeat: no-repeat;
     background-position: left;
     background-size: 30vw 550px;
-    border: 2px solid rgb(55, 16, 225);
+    
   }
 
   .forms,
