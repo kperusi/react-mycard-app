@@ -2,19 +2,696 @@
   box-sizing: border-box;
 }
 @font-face {
-  font-family: 'Space_Grotesk';
-  src: url('./static/SpaceGrotesk-Regular.ttf');
+  font-family: "Space_Grotesk";
+  src: url("./static/SpaceGrotesk-Regular.ttf");
 }
 
 body,
 html {
   padding: 0;
   margin: 0;
-  font-family: 'Space_Grotesk';
+  font-family: "Space_Grotesk";
   font-weight: 100;
-  
 }
-  /* .main {   
+
+/* mobile  */
+@media screen and (min-width: 180px) and (max-width: 780px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    background-image: url(./images/bg-main-mobile.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100% 300px;
+    font-size: 1.7em;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    border: 2px solid rgb(104, 18, 244);
+  }
+
+  .forms,
+  .confirmation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90vw;
+    height: 10%;
+  }
+  .forms {
+    margin: 390px auto auto;
+  }
+
+  .confirmation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 340px auto auto;
+  }
+
+  .holdername,
+  .card-number-input {
+    height: 70px;
+    border-radius: 5px;
+    border-color: grey;
+    padding-left: 5px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 0.8em;
+  }
+
+  .date-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    gap: 5px;
+  }
+
+  .date-labels {
+    display: flex;
+    gap: 50px;
+    padding-top: 10px;
+  }
+  .label {
+    font-size: 0.7em;
+  }
+  .date-container input {
+    border-radius: 5px;
+    border-color: grey;
+    border-style: solid;
+    padding-left: 5px;
+    border-width: 1px;
+    font-size: 0.8em;
+    height: 50px;
+  }
+
+  .card-date-month {
+    width: 23vw;
+    height: 50px;
+    /* font-size: 0.8em; */
+  }
+  .card-date-year {
+    width: 23vw;
+    font-size: 0.8em;
+  }
+  .cvc {
+    width: 41vw;
+  }
+  .number-error {
+    margin-top: -10px;
+    color: red;
+    margin-bottom: 0;
+  }
+
+  .form-button,
+  .continue-button {
+    height: 60px;
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.4em;
+  }
+
+  .confirmation img {
+    margin-bottom: 10px;
+    align-self: center;
+    height: 150px;
+  }
+  .confirmation h1,
+  .confirmation p {
+    margin-top: 0px;
+  }
+  .confirmation p {
+    color: hsl(279, 6%, 55%);
+  }
+  .continue-button {
+    margin-top: 10px;
+  }
+
+  .card-front {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    -moz-box-shadow: 5px 5px 19px rgba(68, 68, 68, 0.3);
+
+    box-shadow: 5px 5px 19px rgba(68, 68, 68, 0.3);
+    border-radius: 8px;
+    gap: 0;
+    max-width: 78vw;
+    min-width: 78vw;
+    top: 150px;
+    left: 30px;
+    height: 200px;
+    background-image: url(./images/bg-card-front.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 78vw 200px;
+  }
+
+  .card-shape {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    margin-left: 30px;
+  }
+
+  .big-circle {
+    width: 40px;
+    height: 40px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 47%;
+  }
+
+  .small-circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 47%;
+    border: 3px solid hsl(0, 0%, 100%);
+  }
+
+  .card-number-display {
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+    font-weight: 100;
+    font-size: 5vw;
+    margin-top: 40px;
+    height: 50px;
+  }
+
+  .name-date {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .name-date h3 {
+    font-size: 0.6em;
+    color: hsl(270, 3%, 87%);
+    font-weight: 100;
+  }
+  .card-date {
+    display: flex;
+    flex-direction: row;
+  }
+  .card-date h3 {
+    padding: 1px;
+  }
+
+  .card-back {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    box-shadow: 1px 1px 10px 1px hsl(0, 7%, 87%);
+    border-radius: 8px;
+    left: 70px;
+    top: 30px;
+    max-width: 78vw;
+    min-width: 78vw;
+    height: 200px;
+    background-image: url(./images/bg-card-back.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 78vw 200px;
+  }
+
+  .cvc-display {
+    margin: 80px 0px 0 50vw;
+    color: rgb(248, 245, 245);
+    font-size: 1.1em;
+  }
+
+  .error-grp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 25px;
+    margin-top: -40px;
+  }
+  .error-grp p {
+    color: red;
+    font-size: 0.8em;
+  }
+  .wrong-format-border {
+    border: 1px solid red;
+  }
+}
+
+/* mobile 768 */
+@media screen and (min-width: 768px) and (max-width: 769px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    background-image: url(./images/bg-main-mobile.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100% 300px;
+    font-size: 1.7em;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    border: 2px solid rgb(229, 11, 11);
+  }
+
+  .forms,
+  .confirmation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90vw;
+    height: 10%;
+  }
+  .forms {
+    margin: 580px auto auto;
+  }
+
+  .confirmation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 600px auto auto;
+  }
+
+  .holdername,
+  .card-number-input {
+    height: 70px;
+    border-radius: 5px;
+    border-color: grey;
+    padding-left: 5px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+
+  .date-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    gap: 5px;
+  }
+
+  .date-labels {
+    display: flex;
+    gap: 50px;
+    padding-top: 10px;
+  }
+  .label {
+    font-size: 1em;
+  }
+  .date-container input {
+    border-radius: 5px;
+    border-color: grey;
+    border-style: solid;
+    padding-left: 5px;
+    border-width: 1px;
+    font-size: 1em;
+    height: 50px;
+  }
+
+  .card-date-month {
+    width: 23vw;
+    height: 50px;
+    /* font-size: 0.8em; */
+  }
+  .card-date-year {
+    width: 23vw;
+    font-size: 1em;
+  }
+  .cvc {
+    width: 41vw;
+  }
+  .number-error {
+    margin-top: -20px;
+    color: red;
+    margin-bottom: 0;
+  }
+
+  .form-button,
+  .continue-button {
+    height: 70px;
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.4em;
+  }
+
+  .confirmation img {
+    margin-bottom: 10px;
+    align-self: center;
+    height: 150px;
+  }
+  .confirmation h1,
+  .confirmation p {
+    margin-top: 0px;
+  }
+  .confirmation p {
+    color: hsl(279, 6%, 55%);
+  }
+  .continue-button {
+    margin-top: 10px;
+  }
+
+  .card-front {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    -moz-box-shadow: 5px 5px 19px rgba(68, 68, 68, 0.3);
+    /* -webkit-box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6); */
+    box-shadow: 5px 5px 19px rgba(68, 68, 68, 0.3);
+    border-radius: 8px;
+    gap: 0;
+    width: 75vw;
+    top: 220px;
+    left: 80px;
+    height: 320px;
+    background-image: url(./images/bg-card-front.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75vw 320px;
+  }
+
+  .card-shape {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    margin-left: 10px;
+  }
+
+  .big-circle {
+    width: 30px;
+    height: 30px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 47%;
+  }
+
+  .small-circle {
+    width: 11px;
+    height: 11px;
+    border-radius: 47%;
+    border: 1px solid hsl(0, 0%, 100%);
+  }
+
+  .card-number-display {
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+    font-weight: 100;
+    font-size: 5vw;
+    margin-top: 120px;
+    height: 50px;
+  }
+
+  .name-date {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -20px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .name-date h3 {
+    font-size: 0.9em;
+    color: hsl(270, 3%, 87%);
+    font-weight: 100;
+  }
+  .card-date {
+    display: flex;
+    flex-direction: row;
+  }
+  .card-date h3 {
+    padding: 1px;
+  }
+
+  .card-back {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    box-shadow: 1px 1px 10px 1px hsl(0, 7%, 87%);
+    border-radius: 8px;
+    left: 160px;
+    top: 30px;
+    width: 75vw;
+    height: 320px;
+    background-image: url(./images/bg-card-back.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75vw 320px;
+  }
+
+  .cvc-display {
+    margin: 140px 0px 0 50vw;
+    color: rgb(248, 245, 245);
+    font-size: 1.1em;
+  }
+
+  .error-grp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 25px;
+    margin-top: -40px;
+  }
+  .error-grp p {
+    color: red;
+    font-size: 1em;
+  }
+  .wrong-format-border {
+    border: 1px solid red;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1025px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    background-image: url(./images/bg-main-mobile.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100% 300px;
+    font-size: 1.7em;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    border: 2px solid rgb(249, 5, 176);
+  }
+
+  .forms,
+  .confirmation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90vw;
+    height: 10%;
+  }
+  .forms {
+    margin: 780px auto auto;
+  }
+
+  .confirmation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 800px auto auto;
+  }
+
+  .holdername,
+  .card-number-input {
+    height: 100px;
+    border-radius: 5px;
+    border-color: grey;
+    padding-left: 5px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 1.7em;
+    margin-bottom: 10px;
+    padding: 15px;
+  }
+
+  .date-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    gap: 15px;
+  }
+
+  .date-labels {
+    display: flex;
+    gap: 240px;
+    padding-top: 10px;
+  }
+  .label {
+    font-size: 1.3em;
+  }
+  .date-container input {
+    border-radius: 5px;
+    border-color: grey;
+    border-style: solid;
+    padding-left: 15px;
+    border-width: 1px;
+    font-size: 1.7em;
+    height: 100px;
+  }
+
+  .card-date-month {
+    width: 23vw;
+    height: 50px;
+  }
+  .card-date-year {
+    width: 23vw;
+    font-size: 1em;
+  }
+  .cvc {
+    width: 41vw;
+  }
+  .number-error {
+    margin-top: -20px;
+    color: red;
+    margin-bottom: 0;
+  }
+
+  .form-button,
+  .continue-button {
+    height: 100px;
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    border-radius: 12px;
+    border: none;
+    font-size: 1.6em;
+  }
+
+  .confirmation img {
+    margin-bottom: 10px;
+    align-self: center;
+    height: 180px;
+  }
+  .confirmation h1,
+  .confirmation p {
+    margin-top: 0px;
+  }
+  .confirmation p {
+    color: hsl(279, 6%, 55%);
+  }
+  .continue-button {
+    margin-top: 10px;
+  }
+
+  .card-front {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    -moz-box-shadow: 5px 5px 19px rgba(68, 68, 68, 0.3);
+    /* -webkit-box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6); */
+    box-shadow: 5px 5px 19px rgba(68, 68, 68, 0.3);
+    border-radius: 8px;
+    gap: 0;
+    width: 75vw;
+    top: 280px;
+    left: 80px;
+    height: 420px;
+    background-image: url(./images/bg-card-front.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75vw 420px;
+  }
+
+  .card-shape {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 50px;
+    margin-bottom: 0;
+    margin-left: 50px;
+  }
+
+  .big-circle {
+    width: 70px;
+    height: 70px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 47%;
+  }
+
+  .small-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 47%;
+    border: 3px solid hsl(0, 0%, 100%);
+  }
+
+  .card-number-display {
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+    font-weight: 100;
+    font-size: 6vw;
+    margin-top: 90px;
+    height: 50px;
+  }
+
+  .name-date {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -0px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .name-date h3 {
+    font-size: 1.1em;
+    color: hsl(270, 3%, 87%);
+    font-weight: 100;
+  }
+  .card-date {
+    display: flex;
+    flex-direction: row;
+  }
+  .card-date h3 {
+    padding: 1px;
+  }
+
+  .card-back {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    box-shadow: 1px 1px 10px 1px hsl(0, 7%, 87%);
+    border-radius: 8px;
+    left: 160px;
+    top: 30px;
+    width: 75vw;
+    height: 420px;
+    background-image: url(./images/bg-card-back.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75vw 420px;
+  }
+
+  .cvc-display {
+    margin: 172px 0px 0 50vw;
+    color: rgb(248, 245, 245);
+    font-size: 1.8em;
+    font-weight: 100;
+  }
+
+  .error-grp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 25px;
+    margin-top: -40px;
+  }
+  .error-grp p {
+    color: red;
+    font-size: 1em;
+  }
+  .wrong-format-border {
+    border: 1px solid red;
+  }
+}
+
+@media screen and (min-width: 1026px) {
+  .main {
     position: relative;
     margin: 0 auto;
     padding-top: 120px;
@@ -24,11 +701,9 @@ html {
     background-repeat: no-repeat;
     background-position: left;
     background-size: 30vw 550px;
-    border: 2px solid red;
-
- 
-    
+    border: 2px solid rgb(96, 208, 55);
   }
+
   .forms,
   .confirmation {
     display: flex;
@@ -39,14 +714,12 @@ html {
   }
   .forms {
     margin: 0px 50vw;
-  
   }
   .confirmation {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin: 0px 580px;
-    
   }
 
   .holdername,
@@ -57,8 +730,12 @@ html {
     padding-left: 5px;
     border-style: solid;
     border-width: 1px;
+    outline: none;
+    margin-bottom: 15px;
   }
-  .holdername:hover{
+
+  .holdername:hover,
+  .card-number-input:hover {
     border-style: solid;
     border-width: 2px;
     border-color: hsl(279, 6%, 55%);
@@ -70,7 +747,6 @@ html {
     flex-direction: row;
     margin-bottom: 20px;
     gap: 5px;
-    
   }
 
   .date-labels {
@@ -85,7 +761,12 @@ html {
     border-style: solid;
     padding-left: 5px;
     border-width: 1px;
-    
+  }
+  .date-container input:hover {
+    border-style: solid;
+    border-width: 2px;
+    border-color: hsl(279, 6%, 55%);
+    cursor: pointer;
   }
   .card-date-month {
     width: 5vw;
@@ -99,11 +780,11 @@ html {
     flex-grow: 2;
     width: 6vw;
   }
-  .label{
-    font-size: .8em;
+  .label {
+    font-size: 0.8em;
     margin-bottom: -5px;
   }
-  .number-error{
+  .number-error {
     margin-top: -10px;
     color: red;
     margin-bottom: 0;
@@ -117,13 +798,17 @@ html {
     border-radius: 5px;
     border: none;
   }
+
+  .form-button:hover,
+  .continue-button:hover {
+    cursor: pointer;
+  }
   .confirmation img {
     margin-bottom: 10px;
     align-self: center;
   }
   .confirmation h1,
   .confirmation p {
-   
     margin: 0;
   }
   .continue-button {
@@ -228,25 +913,24 @@ html {
   }
   .error-grp p {
     color: red;
-  } */
+  }
+  .wrong-format-border {
+    border: 2px solid red;
+  }
+}
 
-/* mobile  */
-@media screen and (min-width: 180px)and (max-width: 780px) {
+@media screen and (min-width: 769px)and (max-width:1023px){
   .main {
-    display: flex;
-    flex-direction: column;
-    background-image: url(./images/bg-main-mobile.png);
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: 100% 300px;
-    font-size: 1.7em;
-    width: 100%;
+    position: relative;
     margin: 0 auto;
-    padding-bottom: 10px;
-   border: 2px solid rgb(104, 18, 244);
-    
-
-    
+    padding-top: 120px;
+    min-width: 100px;
+    width: 100%;
+    background-image: url(./images/bg-main-desktop-copy.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 30vw 550px;
+    border: 2px solid rgb(55, 16, 225);
   }
 
   .forms,
@@ -254,97 +938,107 @@ html {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 90vw;
-    height: 10%;
-
+    width: 25%;
+    height: 400px;
   }
   .forms {
-    margin: 390px auto auto ;
+    margin: 0px 50vw;
   }
-  
   .confirmation {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin: 340px auto auto;
+    margin: 0px 580px;
   }
-  
+
   .holdername,
   .card-number-input {
-    height: 70px;
+    height: 30px;
     border-radius: 5px;
     border-color: grey;
     padding-left: 5px;
     border-style: solid;
     border-width: 1px;
-    font-size: 0.8em;
-   
+    outline: none;
+    margin-bottom: 15px;
   }
-  
+
+  .holdername:hover,
+  .card-number-input:hover {
+    border-style: solid;
+    border-width: 2px;
+    border-color: hsl(279, 6%, 55%);
+    cursor: pointer;
+  }
+
   .date-container {
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
     gap: 5px;
   }
-  
+
   .date-labels {
     display: flex;
-    gap: 50px;
-    padding-top: 10px;
-    
+    gap: 0px;
+    justify-content: space-between;
   }
-  .label{
-    font-size: 0.7em;
-  }
+
   .date-container input {
     border-radius: 5px;
     border-color: grey;
     border-style: solid;
     padding-left: 5px;
     border-width: 1px;
-    font-size: 0.8em;
-    height: 50px;
   }
-  
+  .date-container input:hover {
+    border-style: solid;
+    border-width: 2px;
+    border-color: hsl(279, 6%, 55%);
+    cursor: pointer;
+  }
   .card-date-month {
-    width: 23vw;
-    height: 50px;
-    /* font-size: 0.8em; */
+    width: 5vw;
+    height: 30px;
   }
   .card-date-year {
-    width: 23vw;
-    font-size: 0.8em;
-   
+    width: 5vw;
   }
   .cvc {
-    width: 41vw;
-   
+    flex-basis: 1;
+    flex-grow: 2;
+    width: 6vw;
   }
-  
+  .label {
+    font-size: 0.8em;
+    margin-bottom: -5px;
+  }
+  .number-error {
+    margin-top: -10px;
+    color: red;
+    margin-bottom: 0;
+  }
+
   .form-button,
   .continue-button {
-    height: 60px;
+    height: 40px;
     background-color: hsl(278, 68%, 11%);
     color: white;
     border-radius: 5px;
     border: none;
-    font-size: 1.4em;
   }
- 
-  
+
+  .form-button:hover,
+  .continue-button:hover {
+    cursor: pointer;
+  }
   .confirmation img {
     margin-bottom: 10px;
     align-self: center;
-    height: 150px;
-    
   }
   .confirmation h1,
   .confirmation p {
-    margin-top: 0px;
-  }
-  .confirmation p{
-    color: hsl(279, 6%, 55%)
+    margin: 0;
   }
   .continue-button {
     margin-top: 10px;
@@ -354,19 +1048,18 @@ html {
     position: absolute;
     display: flex;
     flex-direction: column;
-  -moz-box-shadow: 5px 5px 19px rgba(68, 68, 68, 0.3);
-  /* -webkit-box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6); */
-  box-shadow: 5px 5px 19px rgba(68, 68, 68, 0.3);
+    box-shadow: 1px 1px 10px hsl(0, 6%, 42%);
     border-radius: 8px;
     gap: 0;
-    width: 70vw;
-    top: 175px;
-    left: 30px;
-    height: 200px;
+    top: 80px;
+    width: 32vw;
+    max-width: 320px;
+    left: 10%;
+    height: calc(30vw - 10vh);
+    max-height: 200px;
     background-image: url(./images/bg-card-front.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 70vw 200px;
   }
 
   .card-shape {
@@ -376,7 +1069,7 @@ html {
     margin-top: 10px;
     margin-bottom: 0;
     margin-left: 10px;
-    }
+  }
 
   .big-circle {
     width: 30px;
@@ -396,34 +1089,25 @@ html {
     text-align: center;
     color: hsl(0, 0%, 100%);
     font-weight: 100;
-    font-size: 5vw;
-    margin-top: 60px;
-    height: 50px;
+    font-size: 160%;
+    margin-top: 62px;
+    margin-bottom: 0;
   }
 
   .name-date {
     display: flex;
     justify-content: space-between;
-    margin-top: -20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    
-  }
-  .name-date h3{
-    font-size: 0.6em;
-    color: hsl(270, 3%, 87%);
+    margin: 20px 20px;
     font-weight: 100;
-    
+    font-size: 10px;
+    color: hsl(270, 3%, 87%);
   }
   .card-date {
     display: flex;
     flex-direction: row;
-   
-    
   }
   .card-date h3 {
     padding: 1px;
-    
   }
 
   .card-back {
@@ -432,23 +1116,23 @@ html {
     position: absolute;
     box-shadow: 1px 1px 10px 1px hsl(0, 7%, 87%);
     border-radius: 8px;
-    left: 80px;
-    top: 30px;
-    width: 70vw;
-    height: 200px;
+    width: 32vw;
+    max-width: 320px;
+    top: 310px;
+    left: 15%;
+    height: calc(30vw - 10vh);
+    max-height: 200px;
     background-image: url(./images/bg-card-back.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size:80vw 200px;
+    background-size: cover;
   }
-
   .cvc-display {
-    margin: 80px 0px 0 50vw;
-    color: rgb(248, 245, 245);
-    font-size: 1.1em;
-
+    margin: 82px 20vw;
+    color: white;
+    font-size: 1.5em;
   }
-  
+
   .error-grp {
     display: flex;
     flex-direction: row;
@@ -456,45 +1140,15 @@ html {
     padding-right: 25px;
     margin-top: -40px;
   }
-  .error-grp p{
+  .error-grp p {
     color: red;
-    font-size: 0.8em;
-  
   }
-}
-
-@media screen and (min-width:768px) and (max-width:769px) {
-  .main{
+  .wrong-format-border {
     border: 2px solid red;
-    position: relative;
-    margin: 0 auto;
-    padding-top: 120px;
-    min-width: 100px;
-    width: 100%;
-    background-image: url(./images/bg-main-desktop-copy.png);
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: 30vw 550px;
-    border: 2px solid red;
-
-  }
-  .forms {
-    margin: 490px auto;
-  }
-  .confirmation {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 0px 580px;
   }
 }
-@media screen and (min-width:1024px) {
-  .main{
-    border: 2px solid rgb(96, 208, 55);
-  }
-}
-@media screen and (min-width:540px) and (max-width:541px) {
-  .main{
+@media screen and (min-width: 540px) and (max-width: 541px) {
+  .main {
     border: 2px solid rgb(225, 0, 255);
   }
 }

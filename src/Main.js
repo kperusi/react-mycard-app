@@ -20,6 +20,11 @@ function Main(props) {
   const [cvcValue, setCvcValue] = useState("");
   const [errorText, setErrorText] = useState("");
   const [cvcErrorText, setCvcErrorText]=useState('')
+  const [nameError, setNameError]=useState('')
+  const [formName,setFormName]=useState('')
+  const [formNumber,setFormNumber]=useState('')
+  const [numberError,setNumberError]=useState('')
+  
 
   const formClickHandler = (e) => {
     if (n === "") {
@@ -28,8 +33,15 @@ function Main(props) {
     if (cvcValue === "") {
       setCvcErrorText('Can\'t be blank');
     }
+    if(formName===''){
+     setNameError('Can\'t be blank')
+    }
 
-    if (n === "" || monthValue === "" || cvcValue === "") {
+    if(formNumber===''){
+      setNumberError('Can\'t be blank')
+    }
+
+    if (n === "" || monthValue === "" || cvcValue === ""||formName===''||formNumber==='') {
       console.log(`this is n from button click is empty ${n}`);
       setVisibility(false);
     } else {
@@ -50,22 +62,28 @@ function Main(props) {
     setName('JANE APPLESEED')
     setNumber('0000 0000 0000 0000')
     setCvc('000')
+    setNameError('')
+    setFormName('')
+    setNumberError('')
+    setFormNumber('')
   };
 
   const nameHandler = (e) => {
-  
     setName((e.target.value).toUpperCase());
+    setFormName(e.target.value);
+    setNameError('')
   };
 
   const EnterNumberHandler = (e) => {
     setNumber(e.target.value);
+    setFormNumber(e.target.value)
+    setNumberError('')
   };
   const EnterMonthHandler = (e) => {
     setMonth(e.target.value);
     if(inputMonth.length<3){
       setInputMonth(e.target.value)
    }
-    
    
   };
   const EnterYearHandler = (e) => {
@@ -76,6 +94,7 @@ function Main(props) {
   };
   const getN = (e) => {
     setN(e.target.value);
+    setErrorText('')
   };
 
   const getMonthValue = (e) => {
@@ -83,6 +102,7 @@ function Main(props) {
   };
   const getCvcValue = (e) => {
     setCvcValue(e.target.value);
+    setCvcErrorText('')
   };
 
   return (
@@ -106,6 +126,8 @@ function Main(props) {
           getCvcValue={getCvcValue}
           errorText={errorText}
           cvcErrorText={cvcErrorText}
+          nameError = {nameError}
+          numberError={numberError}
         />
       )}
     </div>

@@ -5,16 +5,22 @@ import { CheckForLetters } from "./CheckforLetters";
 
 function Forms(props) {
   const [cardNumber, setCardNumber] = useState("");
+  const [wrongFormatStyle, setWrongFormatStyle]=useState('')
   
 
 
   
   const onchange = (e) => {
     setCardNumber(formatedNumber(e.target.value));
-    
+    if (CheckForLetters(cardNumber)){
+      console.log('letters')
+      setWrongFormatStyle('wrong-format-border')
+      
+    }
   };
 
-console.log(CheckForLetters(cardNumber))
+
+  
 
   return (
     <div className="forms">
@@ -27,11 +33,14 @@ console.log(CheckForLetters(cardNumber))
         type ='text'
 
       ></input>
+        <div className="error-grp">
+        <p className="date-error">{props.nameError}</p>
+      </div>
 
       <label htmlFor="card-number"className="label">CARD NUMBER</label>
 
       <input
-        className="card-number-input"
+        className={`card-number-input ${wrongFormatStyle}`}
         placeholder="e.g 1234 5678 9123 0000"
         onInput={props.enterNumber}
         onChange={onchange}
@@ -41,6 +50,9 @@ console.log(CheckForLetters(cardNumber))
         type={'text'}
         maxLength={19}
       ></input>
+      <div className="error-grp">
+        <p className="date-error">{props.numberError}</p>
+      </div>
       {CheckForLetters(cardNumber)&& <p className="number-error">Wrong format, numbers only</p>}
 
       <div className="date-labels">
