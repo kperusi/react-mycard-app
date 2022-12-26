@@ -6,7 +6,8 @@ import Confirmation from "./confirmation";
 import Cardfront from "./Cardfront";
 import CardBack from "./CardBack";
 
-function Main() {
+function Main(props) {
+  
   const [visibility, setVisibility] = React.useState(false);
   const [name, setName] = useState("JANE APPLESEED");
   const [number, setNumber] = useState("0000 0000 0000 0000");
@@ -21,18 +22,20 @@ function Main() {
   const [cvcErrorText, setCvcErrorText]=useState('')
 
   const formClickHandler = (e) => {
-    if (n === "" || monthValue === "" || cvcValue === "") {
-      console.log(`this is n from button click is empty ${n}`);
-      setVisibility(false);
-    } else {
-      setVisibility(true);
-    }
     if (n === "") {
       setErrorText('Can\'t be blank');
     }
     if (cvcValue === "") {
       setCvcErrorText('Can\'t be blank');
     }
+
+    if (n === "" || monthValue === "" || cvcValue === "") {
+      console.log(`this is n from button click is empty ${n}`);
+      setVisibility(false);
+    } else {
+      setVisibility(true);
+    }
+    
   };
 
   const confirmationClickHandler = () => {
@@ -40,7 +43,13 @@ function Main() {
     setCvcValue('')
     setMonthValue('')
     setCvcErrorText('')
+    setN('')
     setErrorText('')
+    setMonth('00')
+    setYear('00')
+    setName('JANE APPLESEED')
+    setNumber('0000 0000 0000 0000')
+    setCvc('000')
   };
 
   const nameHandler = (e) => {
@@ -75,7 +84,6 @@ function Main() {
   const getCvcValue = (e) => {
     setCvcValue(e.target.value);
   };
-
 
   return (
     <div className="main">

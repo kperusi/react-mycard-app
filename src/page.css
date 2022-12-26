@@ -14,17 +14,19 @@ html {
   font-weight: 100;
   
 }
-  .main {
+  /* .main {   
     position: relative;
     margin: 0 auto;
     padding-top: 120px;
     min-width: 100px;
     width: 100%;
-    height: 100%;
     background-image: url(./images/bg-main-desktop-copy.png);
     background-repeat: no-repeat;
     background-position: left;
     background-size: 30vw 550px;
+    border: 2px solid red;
+
+ 
     
   }
   .forms,
@@ -37,12 +39,14 @@ html {
   }
   .forms {
     margin: 0px 50vw;
+  
   }
   .confirmation {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin: 0px 580px;
+    
   }
 
   .holdername,
@@ -224,7 +228,7 @@ html {
   }
   .error-grp p {
     color: red;
-  }
+  } */
 
 /* mobile  */
 @media screen and (min-width: 180px)and (max-width: 780px) {
@@ -234,10 +238,13 @@ html {
     background-image: url(./images/bg-main-mobile.png);
     background-position: top;
     background-repeat: no-repeat;
-    background-size: 120%;
+    background-size: 100% 300px;
     font-size: 1.7em;
     width: 100%;
     margin: 0 auto;
+    padding-bottom: 10px;
+   border: 2px solid rgb(104, 18, 244);
+    
 
     
   }
@@ -248,19 +255,18 @@ html {
     flex-direction: column;
     gap: 10px;
     width: 90vw;
-    height: 500px;
-   
-    
+    height: 10%;
+
   }
   .forms {
-    margin: 340px auto;
+    margin: 390px auto auto ;
   }
   
   .confirmation {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin: 340px auto;
+    margin: 340px auto auto;
   }
   
   .holdername,
@@ -271,7 +277,7 @@ html {
     padding-left: 5px;
     border-style: solid;
     border-width: 1px;
-    font-size: 1.2em;
+    font-size: 0.8em;
    
   }
   
@@ -284,18 +290,20 @@ html {
   
   .date-labels {
     display: flex;
-    gap: 0px;
+    gap: 50px;
     padding-top: 10px;
-    justify-content: space-between;
+    
   }
-  
+  .label{
+    font-size: 0.7em;
+  }
   .date-container input {
     border-radius: 5px;
     border-color: grey;
     border-style: solid;
     padding-left: 5px;
     border-width: 1px;
-    font-size: 1em;
+    font-size: 0.8em;
     height: 50px;
   }
   
@@ -310,7 +318,7 @@ html {
    
   }
   .cvc {
-    width: 30vw;
+    width: 41vw;
    
   }
   
@@ -351,13 +359,14 @@ html {
   box-shadow: 5px 5px 19px rgba(68, 68, 68, 0.3);
     border-radius: 8px;
     gap: 0;
-    width: 80vw;
+    width: 70vw;
     top: 175px;
     left: 30px;
-    height: 240px;
+    height: 200px;
     background-image: url(./images/bg-card-front.png);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 70vw 200px;
   }
 
   .card-shape {
@@ -367,7 +376,7 @@ html {
     margin-top: 10px;
     margin-bottom: 0;
     margin-left: 10px;
-  }
+    }
 
   .big-circle {
     width: 30px;
@@ -387,26 +396,29 @@ html {
     text-align: center;
     color: hsl(0, 0%, 100%);
     font-weight: 100;
-    font-size: 90%;
-    margin-top: 62px;
-    height: 55px;
-   
+    font-size: 5vw;
+    margin-top: 60px;
+    height: 50px;
   }
 
   .name-date {
     display: flex;
     justify-content: space-between;
-    margin: 3px 20px;
+    margin-top: -20px;
+    padding-left: 10px;
+    padding-right: 10px;
     
   }
   .name-date h3{
-    font-size: 1.9em;
+    font-size: 0.6em;
     color: hsl(270, 3%, 87%);
     font-weight: 100;
+    
   }
   .card-date {
     display: flex;
     flex-direction: row;
+   
     
   }
   .card-date h3 {
@@ -420,19 +432,19 @@ html {
     position: absolute;
     box-shadow: 1px 1px 10px 1px hsl(0, 7%, 87%);
     border-radius: 8px;
-    left: 60px;
+    left: 80px;
     top: 30px;
-    width: 80vw;
-    height: 250px;
+    width: 70vw;
+    height: 200px;
     background-image: url(./images/bg-card-back.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size:80vw 200px;
   }
 
   .cvc-display {
-    margin: 80px 55vw;
-    color: white;
+    margin: 80px 0px 0 50vw;
+    color: rgb(248, 245, 245);
     font-size: 1.1em;
 
   }
@@ -451,3 +463,38 @@ html {
   }
 }
 
+@media screen and (min-width:768px) and (max-width:769px) {
+  .main{
+    border: 2px solid red;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 120px;
+    min-width: 100px;
+    width: 100%;
+    background-image: url(./images/bg-main-desktop-copy.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 30vw 550px;
+    border: 2px solid red;
+
+  }
+  .forms {
+    margin: 490px auto;
+  }
+  .confirmation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0px 580px;
+  }
+}
+@media screen and (min-width:1024px) {
+  .main{
+    border: 2px solid rgb(96, 208, 55);
+  }
+}
+@media screen and (min-width:540px) and (max-width:541px) {
+  .main{
+    border: 2px solid rgb(225, 0, 255);
+  }
+}

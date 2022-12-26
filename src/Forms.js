@@ -8,7 +8,6 @@ function Forms(props) {
   
 
 
-
   
   const onchange = (e) => {
     setCardNumber(formatedNumber(e.target.value));
