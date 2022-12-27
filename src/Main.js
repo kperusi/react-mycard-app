@@ -6,7 +6,7 @@ import Confirmation from "./confirmation";
 import Cardfront from "./Cardfront";
 import CardBack from "./CardBack";
 
-function Main(props) {
+function Main() {
   
   const [visibility, setVisibility] = React.useState(false);
   const [name, setName] = useState("JANE APPLESEED");

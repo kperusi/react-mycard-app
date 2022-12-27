@@ -7,7 +7,7 @@ export default function Cardfront({name, number,month,year}) {
   
   return (
     <div>
-       {/* card-front///////////////////////////////////////////////////// */}
+       
        <div className="card-front">
         <div className="card-shape">
           <span className="big-circle"></span>
