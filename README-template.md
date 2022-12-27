@@ -39,7 +39,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: (https://lighthearted-frontend-solution.netlify.app/)
+- Solution URL: (https://github.com/kperusi/react-mycard-app/)
 - Live Site URL:(https://lighthearted-frontend-solution.netlify.app/)
 
 
