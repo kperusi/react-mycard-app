@@ -689,7 +689,7 @@ html {
     border: 1px solid red;
   }
 }
-
+/* laptop screen */
 @media screen and (min-width: 1026px) {
   .main {
     position: relative;
@@ -701,7 +701,7 @@ html {
     background-repeat: no-repeat;
     background-position: left;
     background-size: 30vw 550px;
-    
+   
   }
 
   .forms,
@@ -837,23 +837,23 @@ html {
     display: flex;
     align-items: center;
     gap: 5px;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 0;
-    margin-left: 10px;
+    margin-left: 20px;
   }
 
   .big-circle {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color: hsl(0, 0%, 100%);
     border-radius: 47%;
   }
 
   .small-circle {
-    width: 11px;
-    height: 11px;
+    width: 22px;
+    height: 22px;
     border-radius: 47%;
-    border: 1px solid hsl(0, 0%, 100%);
+    border: 3px solid hsl(0, 0%, 100%);
   }
 
   .card-number-display {
@@ -861,7 +861,7 @@ html {
     color: hsl(0, 0%, 100%);
     font-weight: 100;
     font-size: 160%;
-    margin-top: 62px;
+    margin-top: 40px;
     margin-bottom: 0;
   }
 

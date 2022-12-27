@@ -20,7 +20,7 @@ This is a solution to the [Interactive card details form challenge on Frontend M
 
 ## Overview
 This is a solution to the [Interactive card details form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw).
-I have built this project using react as a javascript framework. This an app where users can enter their details in a form and the details is shown on a card. The details are card number, customers name, date and cvc number.
+I have built this project using react as a javascript library. This an app where users can enter their details in a form and the details is shown on a card. The details are card number, customers name, date and cvc number.
 
 ### The challenge
 
@@ -57,11 +57,9 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
